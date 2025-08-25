@@ -13,7 +13,15 @@ function App() {
         </div>
 
         <div className="create">
-    create
+        <div className="add-box">
+           <h2>Add A Task</h2>
+          <form className='inputs' id='add-task'>
+            <input type="text" placeholder='Title' name='task-title'/>
+            <input type="date" id='date' value="0" name='task-date'/>
+            <input type="time" id='time' value="0" name='task-time'/>
+          </form>
+          <button id='add-task-btn'>Add</button>
+        </div>
         </div>
         
 
