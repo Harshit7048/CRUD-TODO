@@ -62,6 +62,7 @@
   border: none;
   background: rgb(162, 150, 238);
   color: white;
+  cursor: pointer;
  }
  #date{
   width: 25px;
