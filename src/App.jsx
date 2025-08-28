@@ -5,12 +5,12 @@ import './App.css'
 function App() {
 
   const [newTask, setNewTask] = useState({
-    taskTitle:"",
+    taskTitle: "",
     taskDate: "",
-    taskTime:""
+    taskTime: ""
   })
 
-  const [allTask, setAllTask] = useState([])
+  const [allTask, setAllTask] = useState([{}])
 
   const addTask = (e) => {
     e.preventDefault();
@@ -20,8 +20,12 @@ function App() {
     console.log(form.taskTitle.value, form.taskDate.value, form.taskTime.value);
 
     let newKey = `TSK-${Math.floor(Math.random() * 900) + 100}`
- 
-    setNewTask({ taskTitle: `${form.taskTitle.value}`, takDate: form.taskDate.value, taskTime: form.taskTime.value })
+
+    setNewTask({ newKey: `${newKey}`, taskTitle: `${form.taskTitle.value}`, takDate: form.taskDate.value, taskTime: form.taskTime.value })
+
+    setAllTask((prev)=> prev.length == 0 ?[newTask]:[...prev , newTask])
+
+    console.log(allTask);
 
     console.log(newTask);
   }
@@ -31,7 +35,11 @@ function App() {
     <>
       <div className='main'>
         <div className="read">
-          read
+
+          {allTask >=1 ? <div>
+            
+          </div> : "no"}
+
         </div>
 
         <div className="create">
