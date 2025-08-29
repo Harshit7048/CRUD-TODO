@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import './App.css'
 
@@ -9,6 +9,8 @@ function App() {
     taskDate: "",
     taskTime: ""
   })
+
+ 
 
   const [allTask, setAllTask] = useState([{}])
 
@@ -23,22 +25,24 @@ function App() {
 
     setNewTask({ newKey: `${newKey}`, taskTitle: `${form.taskTitle.value}`, takDate: form.taskDate.value, taskTime: form.taskTime.value })
 
-    setAllTask((prev)=> prev.length == 0 ?[newTask]:[...prev , newTask])
+    setAllTask((prev)=> prev.length <= 0 ?[newTask]:[...prev , newTask])
 
     console.log(allTask);
 
-    console.log(newTask);
+   
   }
-
+  useEffect(()=>{
+    console.log("items updated");
+  },[allTask])
 
   return (
     <>
       <div className='main'>
         <div className="read">
 
-          {allTask >=1 ? <div>
-            
-          </div> : "no"}
+         {
+          allTask.map((ele)=> <div className='task-main'>{ele.taskTitle}</div>)
+         }
 
         </div>
 

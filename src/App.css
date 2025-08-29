@@ -23,6 +23,7 @@
     border-radius: 15px;
     padding: 1rem;
     box-shadow: 1px 1px 10px rgb(195, 192, 192);
+    min-width: 400px;
    
  }
  .create{
@@ -31,6 +32,7 @@
   border-radius: 15px;
   padding: 1rem;
     box-shadow: 1px 1px 10px rgb(195, 192, 192);
+    min-width: 400px;
 
  }
  .add-box{
@@ -73,4 +75,8 @@
  }
  .inputs input{
   margin: 5px;
+ }
+ .task-main{
+   background-color: rebeccapurple;
+    padding: 10px;
  }
