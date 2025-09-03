@@ -1,0 +1,12 @@
+import Task from "./Task";
+
+export default function TaskList({items , setToggle}){
+
+    return (
+        <div>
+
+            {items.map((item)=><Task key={item.id} item={item} setCompleted={item.setCompleted} setToggle={setToggle}/>)}
+            
+        </div>
+    )
+}
